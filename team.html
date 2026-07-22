@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Team | Mwezi Wellness & Retreat Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.team-section { padding:6rem 0; background:var(--cream); }
+.team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:2rem; margin-top:3rem; }
+.team-member { background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition:transform var(--transition); }
+.team-member:hover { transform:translateY(-6px); }
+.member-photo { height:220px; background:linear-gradient(135deg,var(--turq-light) 0%,var(--turquoise) 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.member-photo i { font-size:5rem; color:#fff; opacity:.9; }
+.member-photo.has-photo { background:#c8e8eb; }
+.member-photo.has-photo img { width:100%; height:100%; object-fit:cover; object-position:top; }
+.member-info { padding:1.8rem; }
+.member-name { font-size:1.2rem; margin-bottom:.2rem; }
+.member-role { color:var(--turquoise); font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.8rem; display:block; }
+.member-bio { color:var(--mid); font-size:.92rem; line-height:1.65; margin-bottom:1rem; }
+.member-quals { list-style:none; display:flex; flex-direction:column; gap:.3rem; }
+.member-quals li { font-size:.83rem; color:var(--turq-deeper); padding-left:1.2rem; position:relative; }
+.member-quals li::before { content:'✓'; position:absolute; left:0; color:var(--turquoise); font-weight:700; }
+.member-social { display:flex; gap:.7rem; margin-top:1rem; }
+.member-social a { width:32px; height:32px; border-radius:50%; background:var(--turq-light); display:flex; align-items:center; justify-content:center; color:var(--turquoise); font-size:.85rem; transition:all var(--transition); }
+.member-social a:hover { background:var(--turquoise); color:#fff; }
+
+.team-values { padding:5rem 0; background:#fff; }
+.values-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:2.5rem; }
+.value-strip-item { text-align:center; padding:2rem 1.2rem; background:var(--cream); border-radius:var(--radius); border-top:4px solid var(--turquoise); }
+.value-strip-item i { font-size:2rem; color:var(--turquoise); margin-bottom:.8rem; display:block; }
+.value-strip-item h3 { font-size:1rem; margin-bottom:.4rem; }
+.value-strip-item p { color:var(--mid); font-size:.85rem; }
+
+.join-section { padding:5rem 0; background:linear-gradient(135deg,var(--turquoise) 0%,var(--turq-deeper) 100%); text-align:center; }
+.join-section h2 { color:#fff; margin-bottom:1rem; }
+.join-section p { color:rgba(255,255,255,.8); max-width:520px; margin:0 auto 2rem; }
+
+@media(max-width:900px){ .values-strip { grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .team-grid,.values-strip { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.jpg" alt="Mwezi Logo" class="nav-logo-img"/>
+      <div><span class="nav-logo-text">Mwezi</span><span class="nav-logo-sub">Wellness & Retreat</span></div>
+    </a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="wellness.html">Shop</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<button id="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">Chat with us on WhatsApp</span>
+</button>
+
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <span class="eyebrow eyebrow--light">The People Behind the Healing</span>
+    <h1>Our Team</h1>
+    <p>Qualified, compassionate professionals committed to your mental health, wellness and lasting transformation.</p>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <span class="eyebrow center">Who We Are</span>
+    <h2 class="section-title center">Meet the Mwezi Team</h2>
+    <p class="section-sub center">Each member of our team brings clinical expertise, cultural sensitivity and a deep passion for holistic healing.</p>
+
+    <div class="team-grid">
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Clinical Director</h3>
+          <span class="member-role">Mental Health Clinician</span>
+          <p class="member-bio">A qualified mental health clinician with extensive experience in evidence-based clinical care, trauma-informed therapy, and holistic wellness integration.</p>
+          <ul class="member-quals">
+            <li>Clinical Mental Health Services</li>
+            <li>Psychotherapy & Talk Therapy</li>
+            <li>Trauma-Informed Care</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Wellness Coordinator</h3>
+          <span class="member-role">Nutrition & Hydrotherapy Specialist</span>
+          <p class="member-bio">Passionate about the gut-brain connection, our wellness coordinator designs personalised nutrition plans and leads hydrotherapy programs using natural products.</p>
+          <ul class="member-quals">
+            <li>Nutrition-Based Mental Health</li>
+            <li>Hydrotherapy & Bath Wellness</li>
+            <li>Moringa & Herbal Products</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-people-group"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Retreat Facilitator</h3>
+          <span class="member-role">Group Programs & Safari Retreats</span>
+          <p class="member-bio">A skilled facilitator who creates transformative group healing experiences and leads our signature Therapy + Safari Retreat packages across Zambia.</p>
+          <ul class="member-quals">
+            <li>Group Support Circles</li>
+            <li>Therapy + Safari Packages</li>
+            <li>Retreat-Based Healing Programs</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-seedling"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Youth Wellness Specialist</h3>
+          <span class="member-role">Adolescent & Young Adult Services</span>
+          <p class="member-bio">Dedicated to supporting young people through life transitions, identity challenges, academic stress and mental health with culturally sensitive approaches.</p>
+          <ul class="member-quals">
+            <li>Adolescent Mental Health</li>
+            <li>Young Adult Support</li>
+            <li>Psychoeducation Workshops</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-building"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Corporate Wellness Lead</h3>
+          <span class="member-role">Organisational Wellbeing</span>
+          <p class="member-bio">Experienced in designing and delivering corporate wellness programs, burnout prevention workshops and resilience training for organisations across Zambia.</p>
+          <ul class="member-quals">
+            <li>Corporate Wellness Services</li>
+            <li>Burnout Prevention</li>
+            <li>Leadership Mental Health</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member fade-up">
+        <div class="member-photo"><i class="fa-solid fa-spa"></i></div>
+        <div class="member-info">
+          <h3 class="member-name">Women's Wellness Lead</h3>
+          <span class="member-role">Women's & Men's Programs</span>
+          <p class="member-bio">A compassionate facilitator creating safe, affirming spaces for gender-specific wellness programs, support circles and community healing.</p>
+          <ul class="member-quals">
+            <li>Women's Wellness Program</li>
+            <li>Support Circles</li>
+            <li>Community Psychoeducation</li>
+          </ul>
+          <div class="member-social">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider"><span>~ ~ ~</span></div>
+
+<section class="team-values">
+  <div class="container">
+    <span class="eyebrow center">What Drives Us</span>
+    <h2 class="section-title center">Our Team Values</h2>
+    <div class="values-strip">
+      <div class="value-strip-item fade-up"><i class="fa-solid fa-shield-halved"></i><h3>Confidentiality</h3><p>Every interaction is held with the highest professional discretion.</p></div>
+      <div class="value-strip-item fade-up"><i class="fa-solid fa-microscope"></i><h3>Evidence-Based</h3><p>Our work is grounded in research and clinical best practice.</p></div>
+      <div class="value-strip-item fade-up"><i class="fa-solid fa-earth-africa"></i><h3>Cultural Sensitivity</h3><p>We honour African lived experience in all our work.</p></div>
+      <div class="value-strip-item fade-up"><i class="fa-solid fa-infinity"></i><h3>Lasting Change</h3><p>We focus on sustainable transformation, not quick fixes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="join-section">
+  <div class="container">
+    <h2>Want to Join<br/><em style="color:#7eeaf3">Our Team?</em></h2>
+    <p>We're always looking for passionate, qualified professionals who share our vision for holistic healing. Get in touch.</p>
+    <a onclick="window.open('https://wa.me/260974003694?text=Hello%20Mwezi!%20I%20am%20interested%20in%20joining%20your%20team.','_blank')" class="btn-whatsapp" style="cursor:pointer;display:inline-flex"><i class="fa-brands fa-whatsapp"></i> Message Us on WhatsApp</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Mwezi Logo" class="footer-logo-img"/><div><p class="footer-brand-text">Mwezi</p><p class="footer-brand-sub">Wellness & Retreat Center</p></div></div><p class="footer-tagline">Recognize. Reset. Restart.</p></div>
+      <nav class="footer-nav"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="wellness.html">Wellness Shop</a></li><li><a href="team.html">Our Team</a></li><li><a href="contact.html">Contact & Booking</a></li></ul></nav>
+      <div class="footer-contact"><h4 style="color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem;font-family:'Inter',sans-serif;">Contact</h4><p><i class="fa-solid fa-phone"></i><a href="tel:+260974003694">+260 974 003 694</a><br/><i class="fa-solid fa-envelope"></i><a href="mailto:mweziwellnessandretreat@gmail.com">mweziwellnessandretreat@gmail.com</a><br/><i class="fa-solid fa-location-dot"></i>Airport Rd, Livingstone, Zambia</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mwezi Wellness & Retreat Center. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>
+(function(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => { if(a.getAttribute('href') === 'team.html') a.classList.add('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const waBtn = document.getElementById('whatsapp-float');
+  if(waBtn) waBtn.addEventListener('click', () => window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20find%20out%20more%20about%20your%20services.', '_blank'));
+})();
+</script>
+</body>
+</html>

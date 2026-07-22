@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Services | Mwezi Wellness & Retreat Center</title>
+<meta name="description" content="Explore all 11 services at Mwezi Wellness & Retreat — from clinical mental health care to Therapy + Safari Retreat packages in Livingstone, Zambia."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+.services-section { padding:6rem 0; background:var(--cream); }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.8rem; margin-top:3rem; }
+.service-card { background:#fff; border-radius:var(--radius); padding:2rem; border:1px solid var(--border); position:relative; transition:transform var(--transition),box-shadow var(--transition); }
+.service-card:hover { transform:translateY(-5px); box-shadow:var(--shadow); }
+.service-card .num { position:absolute; top:1.2rem; right:1.4rem; font-size:.7rem; font-weight:700; color:var(--green); opacity:.55; letter-spacing:.08em; }
+.service-card .icon { font-size:2.2rem; margin-bottom:1rem; }
+.service-card h3 { margin-bottom:.5rem; }
+.service-card p { color:var(--mid); font-size:.92rem; margin:0; line-height:1.65; }
+.service-card.signature { background:linear-gradient(135deg,var(--teal) 0%,#1a5c3a 100%); border:none; }
+.service-card.signature h3 { color:#fff; }
+.service-card.signature p { color:rgba(255,255,255,.82); }
+.service-card.signature .num { color:rgba(255,255,255,.4); }
+
+.services-cta-section { padding:5rem 0; background:linear-gradient(135deg,var(--teal) 0%,#2d5c3e 100%); text-align:center; }
+.services-cta-section h2 { color:#fff; margin-bottom:1rem; }
+.services-cta-section p { color:rgba(255,255,255,.78); max-width:500px; margin:0 auto 2rem; }
+.cta-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+@media(max-width:700px){ .services-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.jpg" alt="Mwezi Logo" class="nav-logo-img"/><div><span class="nav-logo-text">Mwezi</span><span class="nav-logo-sub">Wellness &amp; Retreat</span></div></a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="wellness.html">Shop</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<button id="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="wa-tooltip">Chat with us on WhatsApp</span></button>
+
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <span class="eyebrow eyebrow--light">11 Specialised Services</span>
+    <h1>Our Services</h1>
+    <p>Comprehensive care for mind, body and spirit — from clinical therapy to immersive Zambian retreat experiences.</p>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <span class="eyebrow center">Where Clinical Care Meets Deep Rest</span>
+    <h2 class="section-title center">What We Offer</h2>
+    <p class="section-sub center">Every service at Mwezi is delivered with dignity, clinical rigour, and a deep commitment to your lasting wellbeing.</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-up" data-num="01">
+        <span class="num">01</span>
+        <div class="icon"><i class="fa-solid fa-hospital"></i></div>
+        <h3>Clinical Mental Health Services</h3>
+        <p>Comprehensive, evidence-based mental health assessments and interventions delivered by qualified clinicians. We diagnose, treat, and support a full range of mental health conditions in a safe, confidential setting.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">02</span>
+        <div class="icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Psychotherapy & Talk Therapy</h3>
+        <p>Individual therapy using CBT, trauma-informed, and person-centered approaches. We provide a non-judgmental space to explore emotions, patterns, and pathways toward healing and self-understanding.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">03</span>
+        <div class="icon"><i class="fa-solid fa-moon"></i></div>
+        <h3>Retreat-Based Healing Programs</h3>
+        <p>Multi-day immersive programs combining therapy, nature, structured activities, and deep rest. Designed for those who need to step away from daily stress and invest fully in their healing.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">04</span>
+        <div class="icon"><i class="fa-solid fa-spa"></i></div>
+        <h3>Women's & Men's Wellness Programs</h3>
+        <p>Gender-specific programs that address unique mental health challenges with community, peer support, and therapeutic facilitation. A space to be seen, heard, and supported by others who understand.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">05</span>
+        <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Adolescent & Young Adult Services</h3>
+        <p>Specialised support for youth navigating identity, anxiety, academic pressure, relationships, and life transitions. We meet young people where they are and walk alongside them.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">06</span>
+        <div class="icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+        <h3>Group Programs & Support Circles</h3>
+        <p>Facilitated peer support and therapeutic group sessions for shared healing and community resilience. Connection is medicine — our groups create belonging and collective strength.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">07</span>
+        <div class="icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Psychoeducation Workshops</h3>
+        <p>Monthly and quarterly workshops that empower communities with mental health knowledge, coping tools, and awareness. Available for schools, workplaces, churches, and community groups.</p>
+      </div>
+      <div class="service-card signature fade-up" style="background-color:#2aabb0;">
+        <span class="num">08</span>
+        <div class="icon"><i class="fa-solid fa-paw"></i></div>
+        <h3>Therapy + Safari Retreat Packages</h3>
+        <p>Our most unique offering — combine transformative therapy sessions with the awe-inspiring experience of Zambia's wilderness. Healing through nature, stillness, and the power of Africa's wild.</p>
+        <span class="badge badge--gold" style="margin-top:1rem">Mwezi Signature Experience</span>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">09</span>
+        <div class="icon"><i class="fa-solid fa-building"></i></div>
+        <h3>Corporate Wellness Services</h3>
+        <p>Tailored programs for organisations — employee wellness days, burnout prevention workshops, leadership mental health training, and resilience programs. Healthy teams build stronger organisations.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">10</span>
+        <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
+        <h3>Nutrition-Based Mental Health Services</h3>
+        <p>The gut-brain connection is real. We offer personalised nutrition plans that support emotional regulation, energy, sleep, and cognitive clarity as part of a holistic mental health approach.</p>
+      </div>
+      <div class="service-card fade-up">
+        <span class="num">11</span>
+        <div class="icon"><i class="fa-solid fa-bath"></i></div>
+        <h3>Hydrotherapy Wellness Services</h3>
+        <p>Therapeutic bath experiences using premium bath salts, bath bombs, and essential oils. Hydrotherapy activates the parasympathetic nervous system — promoting deep relaxation, stress relief, and better sleep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-cta-section" style="background-color: #2aabb0;">
+  <div class="container">
+    <h2>Not Sure Which<br/><em style="color:var(--green-light)">Service Is Right For You?</em></h2>
+    <p>Tell us a little about what you're looking for and our team will guide you to the right starting point.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-primary">Get In Touch</a>
+      <a href="tel:+260974003694" class="btn-outline btn-outline--white">Call Us Directly</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Mwezi Logo" class="footer-logo-img"/><div><p class="footer-brand-text">Mwezi</p><p class="footer-brand-sub">Wellness &amp; Retreat Center</p></div></div><p class="footer-tagline">Recognize. Reset. Restart.</p></div>
+      <nav class="footer-nav"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="wellness.html">Wellness Shop</a></li><li><a href="team.html">Our Team</a></li><li><a href="contact.html">Contact &amp; Booking</a></li></ul></nav>
+      <div class="footer-contact"><h4 style="color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem;font-family:'Inter',sans-serif;">Contact</h4><p><i class="fa-solid fa-phone"></i><a href="tel:+260974003694">+260 974 003 694</a><br/><i class="fa-solid fa-envelope"></i><a href="mailto:mweziwellnessandretreat@gmail.com">mweziwellnessandretreat@gmail.com</a><br/><i class="fa-solid fa-location-dot"></i>Airport Rd, Livingstone, Zambia</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mwezi Wellness &amp; Retreat Center. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => { if(a.getAttribute('href') === 'services.html') a.classList.add('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const waBtn = document.getElementById('whatsapp-float');
+  if(waBtn) waBtn.addEventListener('click', () => window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20find%20out%20more%20about%20your%20services.', '_blank'));
+})();
+</script>
+</body>
+</html>

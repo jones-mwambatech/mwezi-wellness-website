@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us | Mwezi Wellness & Retreat Center</title>
+<meta name="description" content="Learn about Mwezi Wellness & Retreat — a holistic mental health center in Livingstone, Zambia. Our mission, team, and promise to you."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+.about-mission { padding:6rem 0; background:var(--cream); }
+.about-mission-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:5rem; align-items:start; }
+.about-mission h2 { margin-bottom:1.4rem; }
+.about-mission p { color:var(--mid); margin-bottom:1.1rem; }
+.about-mission blockquote { border-left:3px solid var(--green); padding:1rem 1.5rem; margin-top:2rem; font-family:'Playfair Display',serif; font-style:italic; font-size:1.08rem; color:var(--turquoise); background:rgba(107,168,46,.06); border-radius:0 var(--radius) var(--radius) 0; }
+.promise-box { background:var(--turquoise); border-radius:var(--radius); padding:2.5rem; color:#fff; }
+.promise-box h3 { color:var(--green-light); font-size:1.4rem; margin-bottom:1.2rem; }
+.promise-box p { color:rgba(255,255,255,.8); line-height:1.8; }
+.promise-box ul { list-style:none; margin-top:1.2rem; display:flex; flex-direction:column; gap:.6rem; }
+.promise-box li { color:rgba(255,255,255,.85); padding-left:1.4rem; position:relative; font-size:.95rem; }
+.promise-box li::before { content:'☽'; position:absolute; left:0; color:var(--green-light); font-size:.75rem; top:.15rem; }
+
+.about-values { padding:5rem 0; background:#fff; }
+.values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:2.5rem; }
+.value-card { background:var(--cream); border-radius:var(--radius); padding:2rem; border:1px solid var(--border); text-align:center; transition:transform var(--transition),box-shadow var(--transition); }
+.value-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.value-card .value-icon { font-size:2.5rem; margin-bottom:1rem; }
+.value-card h3 { margin-bottom:.6rem; }
+.value-card p { color:var(--mid); font-size:.92rem; }
+
+.about-who { padding:5rem 0; background:var(--cream); }
+.who-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:2.5rem; }
+.who-card { background:#fff; border-radius:var(--radius); padding:1.8rem; display:flex; gap:1.2rem; align-items:flex-start; box-shadow:var(--shadow); }
+.who-icon { font-size:2rem; flex-shrink:0; }
+.who-card h3 { margin-bottom:.4rem; font-size:1rem; }
+.who-card p { color:var(--mid); font-size:.9rem; margin:0; }
+
+.about-cta { padding:5rem 0; background:linear-gradient(135deg,var(--purple) 0%,var(--teal) 100%); text-align:center; }
+.about-cta h2 { color:#fff; margin-bottom:1rem; }
+.about-cta p { color:rgba(255,255,255,.76); max-width:500px; margin:0 auto 2rem; }
+
+@media(max-width:900px){
+  .about-mission-grid { grid-template-columns:1fr; gap:3rem; }
+  .values-grid { grid-template-columns:1fr 1fr; }
+  .who-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px){ .values-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.jpg" alt="Mwezi Logo" class="nav-logo-img"/><div><span class="nav-logo-text">Mwezi</span><span class="nav-logo-sub">Wellness &amp; Retreat</span></div></a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="wellness.html">Shop</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<button id="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="wa-tooltip">Chat with us on WhatsApp</span></button>
+
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <span class="eyebrow eyebrow--light">Our Story</span>
+    <h1>About Mwezi</h1>
+    <p>Where clinical excellence meets deep rest, renewal and transformation in the heart of Zambia.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="about-mission">
+  <div class="container">
+    <div class="about-mission-grid">
+      <div class="fade-up">
+        <span class="eyebrow">Who We Are</span>
+        <h2>Holistic Healing,<br/><em>Rooted in Evidence</em></h2>
+        <p>Mwezi Wellness & Retreat is a holistic mental health and wellness center offering evidence-based clinical care integrated with psychotherapy, nutrition-based mental health, hydrotherapy, and immersive retreat experiences.</p>
+        <p>The name <em>Mwezi</em> means "moon" in Swahili — a symbol of cycles, renewal, and the quiet power of reflection. Like the moon, we believe healing comes in phases: recognising what needs to change, resetting your foundation, and restarting with clarity and purpose.</p>
+        <p>We serve individuals, families, professionals, and organisations seeking sustainable healing, emotional resilience, and mental clarity in a safe, confidential, and restorative environment.</p>
+        <blockquote>"The main thing to a healthy life is having a healthy Mind, Body and Spirit."</blockquote>
+      </div>
+      <div class="fade-up">
+        <div class="promise-box">
+          <h3>Our Promise</h3>
+          <p>At Mwezi Wellness & Retreat, healing is intentional, dignified and holistic. We provide a safe space where clinical excellence meets rest, reflection and renewal.</p>
+          <ul>
+            <li>Supporting individuals to heal deeply</li>
+            <li>Helping families live well together</li>
+            <li>Empowering professionals to thrive sustainably</li>
+            <li>Partnering with organisations for lasting resilience</li>
+            <li>Confidential, safe, and evidence-based at every step</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="moon-divider" style="background:#fff"><span>☽ ○ ☾</span></div>
+
+<!-- VALUES -->
+<section class="about-values">
+  <div class="container">
+    <span class="eyebrow center">What Guides Us</span>
+    <h2 class="section-title center">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Safety & Confidentiality</h3>
+        <p>Every session, every conversation, and every record is held with the highest standard of professional confidentiality.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-microscope"></i></div>
+        <h3>Evidence-Based Care</h3>
+        <p>Our clinical interventions are grounded in research, delivered by qualified professionals trained in contemporary approaches.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-earth-africa"></i></div>
+        <h3>Cultural Sensitivity</h3>
+        <p>We honour African contexts, values, and lived experiences in all our therapeutic and wellness work.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-hands-praying"></i></div>
+        <h3>Dignity & Respect</h3>
+        <p>Every person who walks through our doors is treated with unconditional dignity, warmth and professional respect.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Holistic Approach</h3>
+        <p>We treat the whole person — mind, body and spirit — recognising that true wellbeing cannot be separated into parts.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-icon"><i class="fa-solid fa-infinity"></i></div>
+        <h3>Sustainable Healing</h3>
+        <p>We focus on lasting transformation, not quick fixes — building resilience, clarity and tools for life beyond therapy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="moon-divider"><span>☽ ○ ☾</span></div>
+
+<!-- WHO WE SERVE -->
+<section class="about-who">
+  <div class="container">
+    <span class="eyebrow center">Who We Serve</span>
+    <h2 class="section-title center">You Belong Here</h2>
+    <p class="section-sub center">Mwezi is a space for anyone ready to begin or continue their healing journey.</p>
+    <div class="who-grid">
+      <div class="who-card fade-up"><div class="who-icon"><i class="fa-solid fa-user"></i></div><div><h3>Individuals</h3><p>Adults navigating anxiety, depression, trauma, grief, burnout, or seeking personal growth and self-understanding.</p></div></div>
+      <div class="who-card fade-up"><div class="who-icon"><i class="fa-solid fa-people-roof"></i></div><div><h3>Families</h3><p>Families experiencing conflict, communication breakdown, grief, or seeking support through life transitions.</p></div></div>
+      <div class="who-card fade-up"><div class="who-icon"><i class="fa-solid fa-briefcase"></i></div><div><h3>Professionals</h3><p>High-performing individuals dealing with workplace stress, burnout, leadership challenges or work-life balance.</p></div></div>
+      <div class="who-card fade-up"><div class="who-icon"><i class="fa-solid fa-building"></i></div><div><h3>Organisations</h3><p>Companies and NGOs seeking employee wellness programs, team resilience training, or corporate mental health support.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta" style="background-color:#2aabb0;">
+  <div class="container">
+    <h2>Ready to Take<br/><em style="color:var(--green-light)">the First Step?</em></h2>
+    <p>Healing begins with a single conversation. Reach out today — we'll guide you from there.</p>
+    <a href="contact.html" class="btn-primary">Book a Session</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Mwezi Logo" class="footer-logo-img"/><div><p class="footer-brand-text">Mwezi</p><p class="footer-brand-sub">Wellness &amp; Retreat Center</p></div></div><p class="footer-tagline">Recognize. Reset. Restart.</p></div>
+      <nav class="footer-nav"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="wellness.html">Wellness Shop</a></li><li><a href="team.html">Our Team</a></li><li><a href="contact.html">Contact &amp; Booking</a></li></ul></nav>
+      <div class="footer-contact"><h4 style="color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem;font-family:'Inter',sans-serif;">Contact</h4><p><i class="fa-solid fa-phone"></i><a href="tel:+260974003694">+260 974 003 694</a><br/><i class="fa-solid fa-envelope"></i><a href="mailto:mweziwellnessandretreat@gmail.com">mweziwellnessandretreat@gmail.com</a><br/><i class="fa-solid fa-location-dot"></i>Airport Rd, Livingstone, Zambia</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mwezi Wellness &amp; Retreat Center. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => { if(a.getAttribute('href') === 'about.html') a.classList.add('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const waBtn = document.getElementById('whatsapp-float');
+  if(waBtn) waBtn.addEventListener('click', () => window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20find%20out%20more%20about%20your%20services.', '_blank'));
+})();
+</script>
+</body>
+</html>

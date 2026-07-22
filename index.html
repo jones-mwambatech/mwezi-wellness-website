@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mwezi Wellness & Retreat Center | Livingstone, Zambia</title>
+<meta name="description" content="Holistic mental health and wellness center in Livingstone, Zambia. Psychotherapy, nutrition, hydrotherapy, moringa products and retreat packages."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* HOME HERO */
+.hero { min-height:100vh; background:linear-gradient(135deg,var(--turq-deeper) 0%,var(--turquoise) 55%,#007f6e 100%); display:flex; align-items:center; position:relative; overflow:hidden; padding-top:70px; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 75% 45%,rgba(255,255,255,.1) 0%,transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(107,168,46,.18) 0%,transparent 50%); }
+.hero-content { position:relative; z-index:1; max-width:720px; padding:4rem 1.5rem; margin:0 auto; text-align:center; }
+.hero-title { font-size:clamp(2.8rem,6.5vw,5rem); color:#fff; line-height:1.05; margin-bottom:1.3rem; }
+.hero-title span { color:#7eeaf3; }
+.hero-sub { color:rgba(255,255,255,.82); font-size:clamp(1rem,2vw,1.15rem); margin-bottom:1.5rem; max-width:520px; margin-left:auto; margin-right:auto; }
+.hero-tagline { display:inline-block; color:#7eeaf3; font-family:'Playfair Display',serif; font-style:italic; border:1px solid rgba(126,234,243,.4); padding:.4rem 1.5rem; border-radius:50px; margin-bottom:2.4rem; font-size:1rem; }
+.hero-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; color:rgba(255,255,255,.4); font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; }
+.scroll-line { width:1px; height:36px; background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent); animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:.4}50%{opacity:1} }
+
+/* STATS BAR */
+.stats-bar { background:var(--turquoise); padding:2rem 0; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; text-align:center; }
+.stat-item h3 { font-size:2rem; color:#fff; margin-bottom:.2rem; }
+.stat-item p { color:rgba(255,255,255,.8); font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; }
+
+/* ABOUT TEASER */
+.home-about { padding:6rem 0; background:var(--cream); }
+.home-about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4.5rem; align-items:center; }
+.home-about-text h2 { margin-bottom:1.2rem; }
+.home-about-text p { color:var(--mid); margin-bottom:1rem; }
+.home-about-text blockquote { border-left:4px solid var(--turquoise); padding:1rem 1.5rem; margin-top:1.8rem; font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:var(--turq-deeper); background:var(--turq-light); border-radius:0 var(--radius) var(--radius) 0; }
+.pillars { display:flex; flex-direction:column; gap:1.2rem; }
+.pillar { background:#fff; border-radius:var(--radius); padding:1.4rem 1.6rem; display:flex; gap:1rem; align-items:flex-start; box-shadow:var(--shadow); border-left:4px solid var(--turquoise); transition:transform var(--transition); }
+.pillar:hover { transform:translateX(6px); }
+.pillar:nth-child(2){ border-color:var(--purple); }
+.pillar:nth-child(3){ border-color:var(--gold); }
+.pillar-icon { font-size:1.8rem; }
+.pillar h3 { margin-bottom:.25rem; font-size:1rem; }
+.pillar p { color:var(--mid); font-size:.9rem; margin:0; }
+
+/* SERVICES TEASER */
+.home-services { padding:6rem 0; background:#fff; }
+.services-preview { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+.service-preview-card { background:var(--cream); border-radius:var(--radius); padding:1.6rem; border:1px solid var(--border); transition:transform var(--transition),box-shadow var(--transition); }
+.service-preview-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.service-preview-card .icon { font-size:2rem; margin-bottom:.8rem; }
+.service-preview-card h3 { font-size:1rem; margin-bottom:.4rem; }
+.service-preview-card p { color:var(--mid); font-size:.88rem; margin:0; }
+.service-preview-card.featured-card { background:linear-gradient(135deg,var(--turquoise) 0%,var(--turq-dark) 100%); border:none; color:#fff; }
+.service-preview-card.featured-card h3 { color:#fff; }
+.service-preview-card.featured-card p { color:rgba(255,255,255,.85); }
+
+/* PRODUCTS TEASER */
+.home-products { padding:6rem 0; background:var(--cream); }
+.products-preview { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:2.5rem; }
+.product-prev-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform var(--transition); }
+.product-prev-card:hover { transform:translateY(-5px); }
+.product-prev-img { height:180px; background-size:cover; background-position:center; background-color:#c8e8eb; }
+.product-prev-info { padding:1.2rem; }
+.product-prev-info h3 { font-size:1rem; margin-bottom:.3rem; }
+.product-prev-info p { color:var(--mid); font-size:.85rem; margin:0; }
+
+/* TEAM TEASER */
+.home-team { padding:6rem 0; background:#fff; }
+.team-preview { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2.5rem; }
+.team-card { background:var(--cream); border-radius:var(--radius); overflow:hidden; text-align:center; box-shadow:var(--shadow-md); transition:transform var(--transition); }
+.team-card:hover { transform:translateY(-5px); }
+.team-avatar { height:180px; background:linear-gradient(135deg,var(--turq-light),var(--turquoise)); display:flex; align-items:center; justify-content:center; }
+.team-avatar i { font-size:4rem; color:#fff; }
+.team-card-info { padding:1.4rem; }
+.team-card-info h3 { font-size:1.05rem; margin-bottom:.2rem; }
+.team-card-info .role { color:var(--turquoise); font-size:.82rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.5rem; }
+.team-card-info p { color:var(--mid); font-size:.88rem; }
+
+/* CTA BANNER */
+.home-cta { padding:5.5rem 0; background:linear-gradient(135deg,var(--turq-deeper) 0%,var(--turquoise) 100%); text-align:center; }
+.home-cta h2 { color:#fff; margin-bottom:1rem; }
+.home-cta p { color:rgba(255,255,255,.8); max-width:520px; margin:0 auto 2rem; }
+.home-cta-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+@media(max-width:900px){
+  .home-about-grid { grid-template-columns:1fr; gap:3rem; }
+  .services-preview,.products-preview,.team-preview { grid-template-columns:1fr 1fr; }
+  .stats-grid { grid-template-columns:1fr 1fr; gap:1.5rem; }
+}
+@media(max-width:600px){
+  .services-preview,.products-preview,.team-preview { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.jpg" alt="Mwezi Logo" class="nav-logo-img"/>
+      <div><span class="nav-logo-text">Mwezi</span><span class="nav-logo-sub">Wellness & Retreat</span></div>
+    </a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="wellness.html">Shop</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- WHATSAPP FLOAT -->
+<button id="whatsapp-float" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">Chat with us on WhatsApp</span>
+</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow eyebrow--light">Livingstone, Zambia</p>
+    <h1 class="hero-title">Heal Deeply.<br/><span>Live Well.</span><br/>Thrive.</h1>
+    <p class="hero-sub">A holistic mental health & wellness center where clinical excellence meets deep rest, renewal and transformation.</p>
+    <div class="hero-tagline">Recognize &nbsp;·&nbsp; Reset &nbsp;·&nbsp; Restart</div>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Book a Session</a>
+      <a href="services.html" class="btn-outline btn-outline--white">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item"><h3>11+</h3><p>Wellness Services</p></div>
+      <div class="stat-item"><h3>5+</h3><p>Natural Products</p></div>
+      <div class="stat-item"><h3>24h</h3><p>Response Time</p></div>
+      <div class="stat-item"><h3>100%</h3><p>Confidential</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT TEASER -->
+<section class="home-about">
+  <div class="container">
+    <div class="home-about-grid">
+      <div class="fade-up">
+        <span class="eyebrow">About Us</span>
+        <h2>Healing That Is<br/><em>Intentional & Dignified</em></h2>
+        <p>Mwezi Wellness & Retreat is a holistic mental health and wellness center offering evidence-based clinical care integrated with psychotherapy, nutrition-based mental health, hydrotherapy, and immersive retreat experiences.</p>
+        <p>We serve individuals, families, professionals, and organisations seeking sustainable healing, emotional resilience, and mental clarity.</p>
+        <blockquote>"You can't enjoy life, if you're not in good health."</blockquote>
+        <br/><a href="about.html" class="btn-outline" style="margin-top:.5rem">Learn More About Us</a>
+      </div>
+      <div class="pillars fade-up">
+        <div class="pillar"><div class="pillar-icon"><i class="fa-solid fa-brain"></i></div><div><h3>Mind</h3><p>Evidence-based clinical mental health care and psychotherapy</p></div></div>
+        <div class="pillar"><div class="pillar-icon"><i class="fa-solid fa-leaf"></i></div><div><h3>Body</h3><p>Nutrition-based wellness, moringa products and hydrotherapy</p></div></div>
+        <div class="pillar"><div class="pillar-icon"><i class="fa-solid fa-star"></i></div><div><h3>Spirit</h3><p>Immersive retreat experiences for deep renewal</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-divider wave-divider--white"><span>~ ~ ~</span></div>
+
+<!-- SERVICES TEASER -->
+<section class="home-services">
+  <div class="container">
+    <span class="eyebrow center">What We Offer</span>
+    <h2 class="section-title center">Our Services</h2>
+    <p class="section-sub center">From clinical mental health care to immersive safari retreats — 11 specialised services for your wellbeing.</p>
+    <div class="services-preview">
+      <div class="service-preview-card fade-up"><div class="icon"><i class="fa-solid fa-hospital"></i></div><h3>Clinical Mental Health</h3><p>Evidence-based assessments and interventions by qualified clinicians.</p></div>
+      <div class="service-preview-card fade-up"><div class="icon"><i class="fa-solid fa-comments"></i></div><h3>Psychotherapy</h3><p>Individual and group therapy in a safe, confidential space.</p></div>
+      <div class="service-preview-card featured-card fade-up"><div class="icon"><i class="fa-solid fa-paw"></i></div><h3>Therapy + Safari Retreats</h3><p>Combine transformative therapy with the awe of Zambia's wild.</p><span class="badge badge--gold">Signature</span></div>
+      <div class="service-preview-card fade-up"><div class="icon"><i class="fa-solid fa-moon"></i></div><h3>Retreat-Based Healing</h3><p>Multi-day immersive programs combining therapy, rest and nature.</p></div>
+      <div class="service-preview-card fade-up"><div class="icon"><i class="fa-solid fa-bowl-food"></i></div><h3>Nutrition-Based Mental Health</h3><p>Personalised nutrition plans supporting emotional wellbeing.</p></div>
+      <div class="service-preview-card fade-up"><div class="icon"><i class="fa-solid fa-bath"></i></div><h3>Hydrotherapy Wellness</h3><p>Bath salts, bath bombs, and essential oils for body restoration.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem"><a href="services.html" class="btn-primary">View All 11 Services</a></div>
+  </div>
+</section>
+
+<div class="wave-divider"><span>~ ~ ~</span></div>
+
+<!-- PRODUCTS TEASER -->
+<section class="home-products">
+  <div class="container">
+    <span class="eyebrow center">Natural Wellness</span>
+    <h2 class="section-title center">Wellness Products</h2>
+    <p class="section-sub center">Handcrafted and natural products — available retail & wholesale — to support your healing journey.</p>
+    <div class="products-preview">
+      <div class="product-prev-card fade-up">
+        <div class="product-prev-img" style="background-image:url('assets/moringa-powder.jpg')"></div>
+        <div class="product-prev-info"><h3>Moringa Powder</h3><p>Pure nutrient-dense moringa leaf powder — retail & wholesale available.</p></div>
+      </div>
+      <div class="product-prev-card fade-up">
+        <div class="product-prev-img" style="background-image:url('assets/bath-salts.jpg')"></div>
+        <div class="product-prev-info"><h3>Hadiya Bath Salts</h3><p>Deep relaxation, stress relief and better sleep.</p></div>
+      </div>
+      <div class="product-prev-card fade-up">
+        <div class="product-prev-img" style="background-image:url('assets/hibiscus.jpg')"></div>
+        <div class="product-prev-info"><h3>Dried Hibiscus</h3><p>Antioxidant-rich botanical for stress and heart health.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem"><a href="wellness.html" class="btn-outline">Explore All Products</a></div>
+  </div>
+</section>
+
+<div class="wave-divider wave-divider--white"><span>~ ~ ~</span></div>
+
+<!-- TEAM TEASER -->
+<section class="home-team">
+  <div class="container">
+    <span class="eyebrow center">Our People</span>
+    <h2 class="section-title center">Meet the Team</h2>
+    <p class="section-sub center">Qualified, compassionate professionals dedicated to your healing journey.</p>
+    <div class="team-preview">
+      <div class="team-card fade-up">
+        <div class="team-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+        <div class="team-card-info"><h3>Clinical Director</h3><div class="role">Mental Health Clinician</div><p>Leading evidence-based clinical care and psychotherapy services.</p></div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="team-card-info"><h3>Wellness Coordinator</h3><div class="role">Nutrition & Hydrotherapy</div><p>Guiding nutrition-based mental health and hydrotherapy programs.</p></div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-avatar"><i class="fa-solid fa-people-group"></i></div>
+        <div class="team-card-info"><h3>Retreat Facilitator</h3><div class="role">Group Programs & Retreats</div><p>Facilitating transformative group healing and safari retreat experiences.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem"><a href="team.html" class="btn-outline">Meet the Full Team</a></div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="home-cta">
+  <div class="container">
+    <h2>Ready to Begin<br/><em style="color:#7eeaf3">Your Healing Journey?</em></h2>
+    <p>Take the first step. Our team will reach out within 24 hours. All enquiries are completely confidential.</p>
+    <div class="home-cta-actions">
+      <a href="contact.html" class="btn-primary">Book a Session</a>
+      <a href="javascript:void(0)" onclick="window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20book%20a%20session.','_blank')" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Mwezi Logo" class="footer-logo-img"/><div><p class="footer-brand-text">Mwezi</p><p class="footer-brand-sub">Wellness & Retreat Center</p></div></div>
+        <p class="footer-tagline">Recognize. Reset. Restart.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="wellness.html">Wellness Shop</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact & Booking</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4 style="color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem;font-family:'Inter',sans-serif;">Contact</h4>
+        <p><i class="fa-solid fa-phone"></i><a href="tel:+260974003694">+260 974 003 694</a><br/>
+        <i class="fa-solid fa-envelope"></i><a href="mailto:mweziwellnessandretreat@gmail.com">mweziwellnessandretreat@gmail.com</a><br/>
+        <i class="fa-solid fa-location-dot"></i>Airport Rd, Livingstone, Zambia<br/>
+        <i class="fa-brands fa-facebook"></i><a href="https://facebook.com" target="_blank">Mwezi Wellness & Retreat Center</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mwezi Wellness & Retreat Center. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => { if(a.getAttribute('href') === 'index.html') a.classList.add('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const waBtn = document.getElementById('whatsapp-float');
+  if(waBtn) waBtn.addEventListener('click', () => window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20find%20out%20more%20about%20your%20services.', '_blank'));
+})();
+</script>
+</body>
+</html>

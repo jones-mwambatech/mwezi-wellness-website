@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Wellness Shop | Mwezi Wellness & Retreat Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.shop-filter { padding:2.5rem 0 0; background:var(--cream); }
+.filter-tabs { display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; }
+.filter-tab { padding:.55rem 1.4rem; border-radius:50px; border:2px solid var(--border); background:#fff; color:var(--mid); font-size:.88rem; font-weight:600; cursor:pointer; transition:all var(--transition); }
+.filter-tab.active, .filter-tab:hover { background:var(--turquoise); border-color:var(--turquoise); color:#fff; }
+
+.products-section { padding:3rem 0 6rem; background:var(--cream); }
+.products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:2rem; }
+
+.product-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); transition:transform var(--transition); }
+.product-card:hover { transform:translateY(-6px); }
+.product-card.featured { grid-column:span 2; display:grid; grid-template-columns:1fr 1fr; }
+.product-img { height:230px; background-size:cover; background-position:center; background-color:var(--turq-light); }
+.product-card.featured .product-img { height:100%; min-height:260px; }
+.product-info { padding:1.8rem; }
+.product-tag { display:inline-block; background:var(--turq-light); color:var(--turquoise); font-size:.74rem; font-weight:700; padding:.25rem .7rem; border-radius:50px; margin-bottom:.7rem; letter-spacing:.04em; text-transform:uppercase; }
+.product-info h3 { font-size:1.15rem; margin-bottom:.4rem; }
+.product-info .desc { color:var(--mid); font-size:.91rem; margin-bottom:1.1rem; line-height:1.65; }
+.benefits-list { list-style:none; display:flex; flex-direction:column; gap:.35rem; margin-bottom:1.2rem; }
+.benefits-list li { font-size:.86rem; color:var(--turq-deeper); padding-left:1.3rem; position:relative; }
+.benefits-list li::before { content:'✓'; position:absolute; left:0; color:var(--turquoise); font-weight:700; }
+
+/* PRICING TABLE */
+.pricing-table { border-top:1px solid var(--border); margin-top:1rem; padding-top:1rem; }
+.pricing-table h4 { font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--mid); margin-bottom:.7rem; font-family:'Inter',sans-serif; }
+.pricing-row { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; border-bottom:1px dashed var(--border); }
+.pricing-row:last-child { border-bottom:none; }
+.pricing-row .qty { font-size:.88rem; color:var(--mid); }
+.pricing-row .retail-price { font-weight:700; color:var(--turq-deeper); font-size:.95rem; }
+.pricing-row .wholesale-price { font-weight:700; color:var(--green); font-size:.95rem; }
+.price-type-label { font-size:.72rem; padding:.15rem .5rem; border-radius:50px; font-weight:600; }
+.price-type-label.retail { background:var(--turq-light); color:var(--turquoise); }
+.price-type-label.wholesale { background:rgba(107,168,46,.12); color:var(--green); }
+
+.wa-enquire { display:inline-flex; align-items:center; gap:.5rem; background:#25D366; color:#fff; padding:.6rem 1.2rem; border-radius:50px; font-size:.85rem; font-weight:600; margin-top:1rem; cursor:pointer; border:none; transition:all var(--transition); }
+.wa-enquire:hover { background:#1ebe5d; transform:translateY(-2px); }
+
+.wholesale-banner { background:linear-gradient(135deg,var(--turquoise) 0%,var(--turq-deeper) 100%); border-radius:16px; padding:3rem; color:#fff; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; margin-top:4rem; }
+.wholesale-banner h2 { color:#fff; margin-bottom:1rem; }
+.wholesale-banner p { color:rgba(255,255,255,.82); line-height:1.75; }
+.wholesale-banner ul { list-style:none; margin-top:1rem; display:flex; flex-direction:column; gap:.5rem; }
+.wholesale-banner li { color:rgba(255,255,255,.85); padding-left:1.4rem; position:relative; font-size:.93rem; }
+.wholesale-banner li::before { content:'✓'; position:absolute; left:0; color:#7eeaf3; font-weight:700; }
+.wholesale-actions { display:flex; flex-direction:column; gap:1rem; align-items:flex-start; }
+
+@media(max-width:900px){ .product-card.featured { grid-column:span 1; display:block; } .product-card.featured .product-img { height:230px; } .wholesale-banner { grid-template-columns:1fr; gap:2rem; } }
+@media(max-width:600px){ .products-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.jpg" alt="Mwezi Logo" class="nav-logo-img"/><div><span class="nav-logo-text">Mwezi</span><span class="nav-logo-sub">Wellness & Retreat</span></div></a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="wellness.html">Shop</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+<button id="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="wa-tooltip">Chat with us on WhatsApp</span></button>
+
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <span class="eyebrow eyebrow--light">Retail & Wholesale Available</span>
+    <h1>Wellness Shop</h1>
+    <p>Natural, handcrafted products rooted in nutritional science and African herbal wisdom. Available retail and wholesale.</p>
+  </div>
+</section>
+
+<div class="shop-filter">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterProducts('all',this)">All Products</button>
+      <button class="filter-tab" onclick="filterProducts('moringa',this)">Moringa Range</button>
+      <button class="filter-tab" onclick="filterProducts('bath',this)">Bath & Wellness</button>
+      <button class="filter-tab" onclick="filterProducts('herbal',this)">Herbal & Spices</button>
+    </div>
+  </div>
+</div>
+
+<section class="products-section">
+  <div class="container">
+    <div class="products-grid" id="products-grid">
+
+      <!-- MORINGA POWDER — FEATURED -->
+      <div class="product-card featured fade-up" data-cat="moringa">
+        <div class="product-img" style="background-image:url('assets/moringa-powder.jpg');background-position:center top;"></div>
+        <div class="product-info">
+          <span class="product-tag">⭐ Bestseller · Moringa Range</span>
+          <h3>Moringa Leaf Powder</h3>
+          <p class="desc">Pure, sun-dried moringa leaf powder — nature's most nutrient-dense superfood. Packed with vitamins A, C, E, calcium, potassium and all essential amino acids. Supports energy, immunity, cognitive function and emotional balance.</p>
+          <ul class="benefits-list">
+            <li>Boosts energy and reduces fatigue</li>
+            <li>Supports cognitive function & mental clarity</li>
+            <li>Rich in iron — combats anaemia</li>
+            <li>Anti-inflammatory & antioxidant-rich</li>
+            <li>Supports blood sugar balance</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">100g bag</span><span class="retail-price">K45 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K32 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">250g bag</span><span class="retail-price">K95 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K70 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">500g bag</span><span class="retail-price">K170 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K120 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">1kg bag</span><span class="retail-price">K300 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K210 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Moringa Leaf Powder')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- MORINGA OIL -->
+      <div class="product-card fade-up" data-cat="moringa">
+        <div class="product-img" style="background:linear-gradient(135deg,#d4edda,#a8d5a2);display:flex;align-items:center;justify-content:center;"><i class="fa-solid fa-droplet" style="font-size:4rem;color:#6BA82E;opacity:.7"></i></div>
+        <div class="product-info">
+          <span class="product-tag">Moringa Range</span>
+          <h3>Moringa Oil (Ben Oil)</h3>
+          <p class="desc">Cold-pressed moringa seed oil — a golden, lightweight oil prized for skin, hair and overall wellness. Rich in oleic acid, antioxidants and anti-inflammatory compounds.</p>
+          <ul class="benefits-list">
+            <li>Deep skin moisturising & anti-ageing</li>
+            <li>Hair strengthening & scalp health</li>
+            <li>Rich in oleic acid & vitamin E</li>
+            <li>Antimicrobial properties</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">50ml bottle</span><span class="retail-price">K80 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K58 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">100ml bottle</span><span class="retail-price">K145 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K105 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">250ml bottle</span><span class="retail-price">K320 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K230 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Moringa Oil')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- BATH SALTS -->
+      <div class="product-card fade-up" data-cat="bath">
+        <div class="product-img" style="background-image:url('assets/bath-salts.jpg')"></div>
+        <div class="product-info">
+          <span class="product-tag">Bath & Wellness · Mwezi Exclusive</span>
+          <h3>Hadiya Bath Salts</h3>
+          <p class="desc">Handcrafted mineral-rich bath salts available in Classic and Tea Tree varieties. Activates the parasympathetic nervous system for deep restoration.</p>
+          <ul class="benefits-list">
+            <li>Deep muscle relaxation</li>
+            <li>Stress & cortisol reduction</li>
+            <li>Improved sleep quality</li>
+            <li>Skin nourishment</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">200g jar</span><span class="retail-price">K65 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K45 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">500g jar</span><span class="retail-price">K130 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K90 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Hadiya Bath Salts')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- HIBISCUS -->
+      <div class="product-card fade-up" data-cat="herbal">
+        <div class="product-img" style="background-image:url('assets/hibiscus.jpg')"></div>
+        <div class="product-info">
+          <span class="product-tag">Herbal & Spices</span>
+          <h3>Dried Hibiscus Flowers</h3>
+          <p class="desc">Vibrant dried hibiscus rich in antioxidants and natural adaptogens. Brew as tea or use in wellness blends for stress relief and heart health.</p>
+          <ul class="benefits-list">
+            <li>Reduces cortisol levels</li>
+            <li>Rich in vitamin C</li>
+            <li>Supports healthy blood pressure</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">100g pack</span><span class="retail-price">K35 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K24 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">250g pack</span><span class="retail-price">K75 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K52 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Dried Hibiscus')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- SPICES -->
+      <div class="product-card fade-up" data-cat="herbal">
+        <div class="product-img" style="background-image:url('assets/spices.jpg')"></div>
+        <div class="product-info">
+          <span class="product-tag">Herbal & Spices</span>
+          <h3>Healing Spice Blends</h3>
+          <p class="desc">Curated healing spice selections — turmeric, cumin, cinnamon, star anise and more — chosen for neurological and anti-inflammatory benefits.</p>
+          <ul class="benefits-list">
+            <li>Turmeric: reduces neuroinflammation</li>
+            <li>Cinnamon: stabilises blood sugar</li>
+            <li>Supports gut-brain health</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">Mixed 100g set</span><span class="retail-price">K55 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K38 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">Mixed 250g set</span><span class="retail-price">K110 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K78 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Healing Spice Blends')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- GINGER -->
+      <div class="product-card fade-up" data-cat="herbal">
+        <div class="product-img" style="background-image:url('assets/ginger.jpg')"></div>
+        <div class="product-info">
+          <span class="product-tag">Herbal & Spices</span>
+          <h3>Fresh & Dried Ginger</h3>
+          <p class="desc">A cornerstone of nutritional therapy — ginger eases anxiety, supports digestion and provides natural gentle energy without caffeine spikes.</p>
+          <ul class="benefits-list">
+            <li>Reduces anxiety and nausea</li>
+            <li>Digestive wellness support</li>
+            <li>Natural energiser</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">100g pack</span><span class="retail-price">K28 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K18 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">250g pack</span><span class="retail-price">K60 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K40 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Ginger')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- PUMPKIN SEEDS -->
+      <div class="product-card fade-up" data-cat="herbal">
+        <div class="product-img" style="background-image:url('assets/pumpkin-seeds.jpg')"></div>
+        <div class="product-info">
+          <span class="product-tag">Herbal & Spices</span>
+          <h3>Pumpkin Seeds</h3>
+          <p class="desc">Rich in magnesium and zinc — two minerals essential for mental clarity, sleep quality and a healthy nervous system.</p>
+          <ul class="benefits-list">
+            <li>Supports mood regulation</li>
+            <li>Boosts sleep quality</li>
+            <li>Anti-inflammatory</li>
+          </ul>
+          <div class="pricing-table">
+            <h4><i class="fa-solid fa-tag"></i> Pricing</h4>
+            <div class="pricing-row"><span class="qty">200g pack</span><span class="retail-price">K42 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K28 <span class="price-type-label wholesale">Wholesale</span></span></div>
+            <div class="pricing-row"><span class="qty">500g pack</span><span class="retail-price">K90 <span class="price-type-label retail">Retail</span></span><span class="wholesale-price">K62 <span class="price-type-label wholesale">Wholesale</span></span></div>
+          </div>
+          <button class="wa-enquire" onclick="waProduct('Pumpkin Seeds')"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WHOLESALE BANNER -->
+    <div class="wholesale-banner fade-up">
+      <div>
+        <span class="eyebrow eyebrow--light">Bulk Orders Welcome</span>
+        <h2>Wholesale Pricing<br/><em style="color:#7eeaf3">Available Now</em></h2>
+        <p>Whether you're a retailer, spa, pharmacy, gym, school or wellness practitioner — we offer competitive wholesale pricing on all our products with flexible minimum order quantities.</p>
+        <ul>
+          <li>Minimum order quantities negotiable</li>
+          <li>Bulk discount pricing on all products</li>
+          <li>Consistent quality and supply</li>
+          <li>Delivery available across Zambia</li>
+        </ul>
+      </div>
+      <div class="wholesale-actions">
+        <button class="btn-whatsapp" onclick="window.open('https://wa.me/260974003694?text=Hello%20Mwezi!%20I%20am%20interested%20in%20wholesale%20pricing%20for%20your%20products.','_blank')"><i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp</button>
+        <a href="contact.html" class="btn-outline btn-outline--white">Send a Formal Enquiry</a>
+        <p style="color:rgba(255,255,255,.65);font-size:.82rem;margin-top:.5rem"><i class="fa-solid fa-phone" style="margin-right:.3rem"></i> Call: +260 974 003 694</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Mwezi Logo" class="footer-logo-img"/><div><p class="footer-brand-text">Mwezi</p><p class="footer-brand-sub">Wellness & Retreat Center</p></div></div><p class="footer-tagline">Recognize. Reset. Restart.</p></div>
+      <nav class="footer-nav"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="wellness.html">Wellness Shop</a></li><li><a href="team.html">Our Team</a></li><li><a href="contact.html">Contact & Booking</a></li></ul></nav>
+      <div class="footer-contact"><h4 style="color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.9rem;font-family:'Inter',sans-serif;">Contact</h4><p><i class="fa-solid fa-phone"></i><a href="tel:+260974003694">+260 974 003 694</a><br/><i class="fa-solid fa-envelope"></i><a href="mailto:mweziwellnessandretreat@gmail.com">mweziwellnessandretreat@gmail.com</a><br/><i class="fa-solid fa-location-dot"></i>Airport Rd, Livingstone, Zambia</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mwezi Wellness & Retreat Center. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.querySelectorAll('.nav-links a').forEach(a => { if(a.getAttribute('href') === 'wellness.html') a.classList.add('active'); });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const waBtn = document.getElementById('whatsapp-float');
+  if(waBtn) waBtn.addEventListener('click', () => window.open('https://wa.me/260974003694?text=Hello%20Mwezi%20Wellness!%20I%20would%20like%20to%20find%20out%20more%20about%20your%20services.', '_blank'));
+})();
+</script>
+<script>
+// Product filter
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#products-grid .product-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+// WhatsApp order
+function waProduct(name) {
+  const msg = encodeURIComponent(`Hello Mwezi Wellness! I would like to order: ${name}. Please send me more details on availability and delivery.`);
+  window.open(`https://wa.me/260974003694?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>

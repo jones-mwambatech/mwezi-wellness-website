@@ -1,0 +1,158 @@
+/* =============================================
+   MWEZI WELLNESS & RETREAT — GLOBAL STYLESHEET
+   Primary: Turquoise #40CED1 / #2aabb0
+   Green:   #6BA82E
+   Purple:  #7B4FA6
+   Gold:    #C8922A
+   Cream:   #F4FBFB
+============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --turquoise:   #40CED1;
+  --turq-dark:   #2aabb0;
+  --turq-deeper: #1a7f82;
+  --turq-light:  #e0f9fa;
+  --green:       #6BA82E;
+  --green-light: #8CC63F;
+  --purple:      #7B4FA6;
+  --gold:        #C8922A;
+  --cream:       #F4FBFB;
+  --white:       #FFFFFF;
+  --charcoal:    #1C2B2D;
+  --mid:         #4A6365;
+  --border:      #C8E8EB;
+  --shadow:      0 8px 32px rgba(64,206,209,.12);
+  --shadow-md:   0 4px 16px rgba(64,206,209,.15);
+  --radius:      12px;
+  --transition:  .25s ease;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.65; }
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); color: var(--turq-deeper); }
+h3 { font-size: 1.15rem; color: var(--turq-deeper); }
+em { font-style: italic; color: var(--turquoise); }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+p { line-height: 1.7; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* BUTTONS */
+.btn-primary { display:inline-block; background:var(--turquoise); color:#fff; padding:.85rem 2.2rem; border-radius:50px; font-weight:600; font-size:.95rem; border:none; cursor:pointer; transition:background var(--transition),transform var(--transition),box-shadow var(--transition); box-shadow:0 4px 15px rgba(64,206,209,.35); }
+.btn-primary:hover { background:var(--turq-dark); transform:translateY(-2px); box-shadow:0 6px 20px rgba(64,206,209,.45); }
+.btn-outline { display:inline-block; background:transparent; color:var(--turquoise); padding:.8rem 2rem; border-radius:50px; border:2px solid var(--turquoise); font-weight:600; font-size:.95rem; cursor:pointer; transition:all var(--transition); }
+.btn-outline:hover { background:var(--turquoise); color:#fff; }
+.btn-outline--white { border-color:#fff; color:#fff; }
+.btn-outline--white:hover { background:#fff; color:var(--turq-deeper); }
+.btn-whatsapp { display:inline-flex; align-items:center; gap:.6rem; background:#25D366; color:#fff; padding:.85rem 2rem; border-radius:50px; font-weight:600; font-size:.95rem; border:none; cursor:pointer; transition:all var(--transition); box-shadow:0 4px 15px rgba(37,211,102,.35); }
+.btn-whatsapp:hover { background:#1ebe5d; transform:translateY(-2px); }
+.btn-full { width:100%; text-align:center; display:block; }
+
+/* EYEBROW */
+.eyebrow { display:block; text-transform:uppercase; letter-spacing:.15em; font-size:.76rem; font-weight:600; color:var(--turquoise); margin-bottom:.6rem; }
+.eyebrow--light { color:#7eeaf3; }
+.section-title { margin-bottom:1rem; }
+.section-sub { color:var(--mid); font-size:1.02rem; max-width:600px; }
+.center { text-align:center; }
+.section-sub.center { margin:0 auto 3rem; }
+
+/* MOON / WAVE DIVIDER */
+.wave-divider { text-align:center; padding:2rem 0; background:var(--cream); }
+.wave-divider--white { background:#fff; }
+.wave-divider span { font-size:1.4rem; letter-spacing:.8rem; color:var(--turquoise); opacity:.4; }
+
+/* ── NAV ── */
+#navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(26,127,130,.97); backdrop-filter:blur(12px); transition:box-shadow var(--transition); }
+#navbar.scrolled { box-shadow:0 2px 24px rgba(0,0,0,.2); }
+.nav-inner { max-width:1140px; margin:0 auto; padding:0 1.5rem; display:flex; align-items:center; justify-content:space-between; height:70px; }
+.nav-logo { display:flex; align-items:center; gap:.6rem; }
+.nav-logo-img { height:42px; width:42px; border-radius:50%; object-fit:cover; border:2px solid var(--turquoise); }
+.nav-logo-text { font-family:'Playfair Display',serif; font-size:1.3rem; color:#fff; font-weight:700; letter-spacing:.02em; }
+.nav-logo-sub { font-size:.65rem; color:rgba(255,255,255,.55); text-transform:uppercase; letter-spacing:.12em; display:block; line-height:1; margin-top:1px; }
+.nav-links { list-style:none; display:flex; align-items:center; gap:1.6rem; }
+.nav-links a { color:rgba(255,255,255,.82); font-size:.87rem; font-weight:500; transition:color var(--transition); }
+.nav-links a:hover, .nav-links a.active { color:#7eeaf3; }
+.nav-cta { background:var(--turquoise)!important; color:#fff!important; padding:.52rem 1.3rem; border-radius:50px; font-weight:600!important; box-shadow:0 2px 10px rgba(64,206,209,.4); }
+.nav-cta:hover { background:#7eeaf3!important; color:var(--turq-deeper)!important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { width:24px; height:2px; background:#fff; border-radius:2px; transition:all .3s; }
+
+/* ── PAGE HERO ── */
+.page-hero { padding:9rem 0 4.5rem; background:linear-gradient(135deg, var(--turq-deeper) 0%, var(--turquoise) 60%, #007f6e 100%); text-align:center; position:relative; overflow:hidden; }
+.page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 40%, rgba(255,255,255,.08) 0%, transparent 60%); }
+.page-hero-content { position:relative; z-index:1; }
+.page-hero h1 { font-size:clamp(2.2rem,5vw,3.5rem); color:#fff; margin-bottom:1rem; }
+.page-hero p { color:rgba(255,255,255,.8); font-size:1.05rem; max-width:560px; margin:0 auto; }
+
+/* ── CARDS ── */
+.card { background:#fff; border-radius:var(--radius); padding:1.8rem; border:1px solid var(--border); transition:transform var(--transition),box-shadow var(--transition); }
+.card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.badge { display:inline-block; background:var(--turquoise); color:#fff; font-size:.72rem; font-weight:700; padding:.25rem .8rem; border-radius:50px; margin-top:1rem; letter-spacing:.05em; text-transform:uppercase; }
+.badge--gold { background:var(--gold); }
+.badge--green { background:var(--green); }
+
+/* ── PRICING TAGS ── */
+.price-tag { display:inline-flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin-top:1rem; }
+.price { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--turq-deeper); }
+.price-label { font-size:.75rem; color:var(--mid); background:var(--turq-light); padding:.2rem .6rem; border-radius:50px; font-weight:600; }
+.price-wholesale { color:var(--green); }
+
+/* ── WHATSAPP FLOAT BUTTON ── */
+#whatsapp-float { position:fixed; bottom:1.8rem; right:1.8rem; z-index:999; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,.5); cursor:pointer; transition:transform var(--transition),box-shadow var(--transition); border:none; }
+#whatsapp-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,.6); }
+#whatsapp-float i { font-size:1.6rem; color:#fff; }
+#whatsapp-float .wa-tooltip { position:absolute; right:70px; background:var(--charcoal); color:#fff; font-size:.78rem; padding:.4rem .8rem; border-radius:6px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; }
+#whatsapp-float:hover .wa-tooltip { opacity:1; }
+
+/* ── FOOTER ── */
+.footer { background:var(--turq-deeper); color:rgba(255,255,255,.65); padding:3.5rem 0 1.5rem; }
+.footer-inner { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; align-items:start; }
+.footer-logo-wrap { display:flex; align-items:center; gap:.8rem; margin-bottom:.5rem; }
+.footer-logo-img { height:44px; width:44px; border-radius:50%; object-fit:cover; border:2px solid var(--turquoise); }
+.footer-brand-text { font-family:'Playfair Display',serif; font-size:1.35rem; color:#fff; font-weight:700; }
+.footer-brand-sub { color:rgba(255,255,255,.4); font-size:.78rem; }
+.footer-tagline { color:#7eeaf3; font-style:italic; font-family:'Playfair Display',serif; font-size:.9rem; margin-top:.5rem; }
+.footer-nav h4 { color:#fff; font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.9rem; font-family:'Inter',sans-serif; }
+.footer-nav ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+.footer-nav a { color:rgba(255,255,255,.6); font-size:.88rem; transition:color var(--transition); }
+.footer-nav a:hover { color:#7eeaf3; }
+.footer-contact p { font-size:.87rem; line-height:2; }
+.footer-contact a { color:rgba(255,255,255,.7); transition:color var(--transition); }
+.footer-contact a:hover { color:#fff; }
+.footer-contact i { color:var(--turquoise); margin-right:.35rem; font-size:.85rem; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem; text-align:center; font-size:.8rem; }
+
+/* FADE IN */
+.fade-up { opacity:0; transform:translateY(26px); transition:opacity .6s ease,transform .6s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .footer-inner { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:768px){
+  .hamburger { display:flex; }
+  .nav-links { position:fixed; top:70px; left:0; right:0; background:var(--turq-deeper); flex-direction:column; gap:0; transform:translateY(-130%); transition:transform .3s ease; z-index:999; }
+  .nav-links.open { transform:translateY(0); }
+  .nav-links li { border-bottom:1px solid rgba(255,255,255,.08); }
+  .nav-links a { display:block; padding:1rem 1.5rem; }
+  .footer-inner { grid-template-columns:1fr; gap:2rem; }
+}
+@media(prefers-reduced-motion:reduce){ .fade-up { transition:none; opacity:1; transform:none; } }
+
+/* ── FONT AWESOME ICON STYLES ── */
+.pillar-icon i { font-size:1.7rem; color:var(--turquoise); }
+.pillar:nth-child(2) .pillar-icon i { color:var(--purple); }
+.pillar:nth-child(3) .pillar-icon i { color:var(--gold); }
+.service-preview-card .icon i { font-size:1.9rem; color:var(--turquoise); }
+.service-preview-card.featured-card .icon i { color:rgba(255,255,255,.9); }
+.service-card .icon i { font-size:2rem; color:var(--turquoise); }
+.service-card.signature .icon i { color:rgba(255,255,255,.9); }
+.value-icon i { font-size:2.2rem; color:var(--turquoise); }
+.who-icon i { font-size:1.8rem; color:var(--turquoise); }
+.contact-item-icon i { font-size:1.3rem; color:var(--turquoise); }
+.form-note i { color:var(--turquoise); }
+.wave-divider span { font-size:1.4rem; letter-spacing:.8rem; color:var(--turquoise); opacity:.4; }
